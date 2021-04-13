@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivEnviar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_marginTop="9dp"
+        android:layout_below="@+id/ivEnviar"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tvEnivar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="#80000000"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:text="Carlos Roca"
+        android:textColor="#666666"
+        android:textSize="10sp"
+        android:textStyle="normal" />
+</RelativeLayout>
