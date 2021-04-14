@@ -1,7 +1,9 @@
 package vn.com.nghiemduong.paypal.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.GridLayout
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.GridLayoutManager
@@ -19,6 +21,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+//        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+//        actionBar?.hide()
+/*        window.decorView.apply {
+            systemUiVisibility =
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
+        }*/
+
         setContentView(R.layout.activity_main)
 
         replaceFragmentNoStack(
@@ -32,14 +42,8 @@ class MainActivity : AppCompatActivity() {
 
         navMain.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.item_enviar -> replaceFragmentNoStack(
-                    supportFragmentManager, PayPalFragment(),
-                    R.id.frameMain
-                )
-                R.id.item_prefit -> replaceFragmentNoStack(
-                    supportFragmentManager, PayPalFragment(),
-                    R.id.frameMain
-                )
+                R.id.item_enviar -> startActivity(Intent(this, AccountActivity::class.java))
+                R.id.item_prefit -> startActivity(Intent(this, ConsiderActivity::class.java))
             }
             return@setOnNavigationItemSelectedListener true
         }

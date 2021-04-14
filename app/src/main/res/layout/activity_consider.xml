@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    tools:context=".main.ConsiderActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tb"
+                app:navigationIcon="@drawable/ic_back_black"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Revisar y enviar "
+                    android:textColor="#1b1b1b"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="@drawable/bg_actividad"
+                android:layout_marginStart="17dp"
+                android:layout_marginEnd="17dp"
+                android:layout_width="match_parent"
+                android:layout_height="190dp">
+                
+                <ImageView
+                    android:id="@+id/ivPerson"
+                    android:background="@drawable/bitmap"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="17dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"/>
+
+                <ImageView
+                    android:id="@+id/ivEdit"
+                    android:background="@drawable/ic_edit"
+                    android:layout_marginEnd="27dp"
+                    android:layout_marginTop="26dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"/>
+
+                <TextView
+                    android:id="@+id/tvEuro"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="37dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_euro"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivEdit"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:textStyle="normal"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
+                    android:text="20,00€" />
+
+                <TextView
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="7dp"
+                    android:id="@+id/tvDavid"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivPerson"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="#1b1b1b"
+                    android:text="David Paz " />
+
+                <TextView
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/tvEmail"
+                    app:layout_constraintTop_toBottomOf="@id/tvDavid"
+                    android:layout_marginStart="26dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="12sp"
+                    android:textColor="#999999"
+                    android:text="davidpaz@correo.com " />
+
+                <TextView
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/tvMensaje"
+                    app:layout_constraintTop_toBottomOf="@id/tvEmail"
+                    android:layout_marginStart="26dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="10sp"
+                    android:textColor="#1b1b1b"
+                    android:text="Mensaje" />
+
+                <TextView
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvMensaje"
+                    android:layout_marginStart="26dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:text="Este es el dinero de la entradas…" />
+
+                <TextView
+                    android:layout_marginEnd="39dp"
+                    android:layout_marginTop="37dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEuro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="normal"
+                    android:textSize="14sp"
+                    android:textColor="#022c59"
+                    android:text="🎬" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:paddingStart="22dp"
+                android:paddingEnd="14dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginStart="17dp"
+                android:background="@drawable/bg_actividad"
+                android:layout_marginTop="42dp"
+                android:layout_width="match_parent"
+                android:layout_height="284dp">
+
+                <TextView
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:id="@+id/tvTipo"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="14sp"
+                    android:textColor="#1b1b1b"
+                    android:text="Tipo de pago " />
+
+                <ImageView
+                    android:id="@+id/ivArrow1"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/ic_keyboard_arrow_right_black_18_dp_copy_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+
+                <TextView
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="26dp"
+                    app:layout_constraintEnd_toStartOf="@id/ivArrow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:text="Personal " />
+
+                <TextView
+                    android:id="@+id/viewLine1"
+                    android:layout_marginTop="21.5dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvTipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg_view_line_dashed"
+                    android:layerType="software" />
+
+                <ImageView
+                    android:layout_marginTop="12.5dp"
+                    android:id="@+id/ivBbva"
+                    android:background="@drawable/ic_bitmap_bbva"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewLine1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"/>
+
+                <TextView
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toEndOf="@id/ivBbva"
+                    android:layout_marginTop="16.5dp"
+                    app:layout_constraintTop_toBottomOf="@id/viewLine1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:textColor="#1b1b1b"
+                    android:text="BBVA" />
+
+                <TextView
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginTop="38.5dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toEndOf="@id/ivBbva"
+                    app:layout_constraintTop_toBottomOf="@id/viewLine1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="14sp"
+                    android:textColor="#999999"
+                    android:text="****9889" />
+
+                <ImageView
+                    android:id="@+id/ivArrow2"
+                    android:layout_marginTop="12.5dp"
+                    android:background="@drawable/ic_keyboard_arrow_right_black_18_dp_copy_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewLine1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+
+                <TextView
+                    android:id="@+id/viewLine2"
+                    android:layout_marginTop="16.3dp"
+                    app:layout_constraintTop_toBottomOf="@id/ivBbva"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg_view_line_dashed"
+                    android:layerType="software" />
+
+                <TextView
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:id="@+id/tvTarifas"
+                    android:layout_marginTop="21.8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewLine2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="14sp"
+                    android:textColor="#1b1b1b"
+                    android:text="Tarifas por transacción " />
+
+                <TextView
+                    android:layout_marginTop="20.8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewLine2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="#666666"
+                    android:gravity="end"
+                    android:text="0,00€ " />
+
+                <TextView
+                    android:id="@+id/viewLine3"
+                    android:layout_marginTop="20.5dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvTarifas"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/bg_view_line_dashed"
+                    android:layerType="software" />
+
+                <TextView
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:layout_marginTop="24.5dp"
+                    app:layout_constraintTop_toBottomOf="@id/viewLine3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="14sp"
+                    android:textColor="#1b1b1b"
+                    android:text="Tú pagas" />
+
+                <TextView
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:layout_marginTop="21.5dp"
+                    app:layout_constraintEnd_toEndOf="@id/viewLine3"
+                    app:layout_constraintTop_toBottomOf="@id/viewLine3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="20sp"
+                    android:textColor="#00d090"
+                    android:gravity="end"
+                    android:text="20,00€ " />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:fontFamily="@font/montserrat_semibold"
+                android:layout_marginBottom="48dp"
+                android:background="@drawable/bg_enviar"
+                android:layout_marginTop="44dp"
+                android:gravity="center"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:letterSpacing="0.06"
+                android:text="ENVIAR AHORA" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

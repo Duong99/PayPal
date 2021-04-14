@@ -35,6 +35,10 @@ class ActividadAdapter(var mListActividad: MutableList<Actividad>) :
                 holder.tvDola.setTextColor(valueOf(Color.GREEN))
             }
             holder.tvTop.text = it.titleTop
+
+            if (position == mListActividad.size - 1) {
+                holder.tvViewLine.visibility = View.GONE
+            }
         }
     }
 
@@ -42,5 +46,6 @@ class ActividadAdapter(var mListActividad: MutableList<Actividad>) :
         var tvTop: TextView = itemView.findViewById(R.id.tvTop)
         var tvBottom: TextView = itemView.findViewById(R.id.tvBottom)
         var tvDola: TextView = itemView.findViewById(R.id.tvDola)
+        var tvViewLine: TextView = itemView.findViewById(R.id.tvViewLine)
     }
 }
