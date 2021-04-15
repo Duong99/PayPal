@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg_white"
     tools:context=".fragment.PayPalFragment">
 
@@ -21,26 +21,26 @@
                 android:layout_height="60dp">
 
                 <androidx.coordinatorlayout.widget.CoordinatorLayout
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="21dp"
                     android:layout_width="46dp"
-                    android:layout_height="36dp">
+                    android:layout_height="36dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="21dp">
 
                     <ImageView
-                        android:layout_marginStart="5dp"
                         android:id="@+id/ivPerson"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
+                        android:layout_marginStart="5dp"
                         android:background="@drawable/bitmap_copy_2" />
 
                     <androidx.cardview.widget.CardView
-                        app:cardBackgroundColor="#dd0164"
-                        android:layout_marginStart="15dp"
-                        app:layout_anchorGravity="top|end"
-                        app:layout_anchor="@id/ivPerson"
-                        app:cardCornerRadius="4dp"
                         android:layout_width="8dp"
-                        android:layout_height="8dp"/>
+                        android:layout_height="8dp"
+                        android:layout_marginStart="15dp"
+                        app:cardBackgroundColor="#dd0164"
+                        app:cardCornerRadius="4dp"
+                        app:layout_anchor="@id/ivPerson"
+                        app:layout_anchorGravity="top|end" />
                 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
                 <ImageView
@@ -58,163 +58,168 @@
                     android:background="@drawable/ic_settings_black_18_dp" />
             </RelativeLayout>
 
-            <RelativeLayout
 
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
-                android:layout_gravity="center"
                 android:layout_marginStart="17dp"
                 android:layout_marginEnd="17dp"
-                android:background="@drawable/bg_card_paypal">
+                app:cardCornerRadius="10dp">
 
-                <androidx.cardview.widget.CardView
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_square_credit_card">
 
-                    app:cardCornerRadius="28dp"
-                    android:id="@+id/cvAccount"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp">
-
-                    <ImageView
-
+                    <androidx.cardview.widget.CardView
+                        android:layout_marginTop="16dp"
+                        android:id="@+id/cvAccount"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:src="@drawable/messi" />
-                </androidx.cardview.widget.CardView>
+                        android:layout_marginStart="30dp"
+                        app:cardCornerRadius="28dp">
 
-                <TextView
-                    android:fontFamily="@font/montserrat_semibold"
-                    android:layout_width="52dp"
-                    android:layout_height="22dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="22dp"
-                    android:layout_marginEnd="14dp"
-                    android:background="@drawable/bg_hoy"
-                    android:gravity="center"
-                    android:text="HOY"
-                    android:textColor="#3a2424"
-                    android:textSize="10sp" />
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@drawable/messi" />
+                    </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:fontFamily="@font/montserrat_medium"
-                    android:id="@+id/tvMina"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_below="@id/cvAccount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="normal"
-                    android:text="Nina te ha enviado " />
+                    <TextView
+                        android:layout_width="52dp"
+                        android:layout_height="22dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginEnd="14dp"
+                        android:background="@drawable/bg_hoy"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:gravity="center"
+                        android:text="HOY"
+                        android:textColor="#3a2424"
+                        android:textSize="10sp" />
 
-                <TextView
-                    android:id="@+id/tv20000"
-                    android:layout_marginStart="28dp"
-                    android:layout_below="@id/tvMina"
-                    android:textColor="@color/white"
-                    android:textSize="28sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20,00€" />
+                    <TextView
+                        android:id="@+id/tvMina"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cvAccount"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Nina te ha enviado "
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
 
-                <TextView
-                    android:id="@+id/tvVer"
-                    android:background="@drawable/bg_ver_detalles"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginStart="26dp"
-                    android:textSize="12dp"
-                    android:textColor="@color/white"
-                    android:layout_below="@id/tv20000"
-                    android:gravity="center"
-                    android:text="VER DETALLES"
-                    android:layout_width="132dp"
-                    android:layout_height="30dp"/>
+                    <TextView
+                        android:id="@+id/tv20000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvMina"
+                        android:layout_marginStart="28dp"
+                        android:text="20,00€"
+                        android:textColor="@color/white"
+                        android:textSize="28sp" />
 
-                <TextView
-                    android:fontFamily="@font/montserrat_medium"
-                    android:layout_marginStart="31dp"
-                    android:layout_below="@id/tv20000"
-                    android:id="@+id/tvMensaje"
-                    android:layout_toEndOf="@id/tvVer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal"
-                    android:textSize="10sp"
-                    android:textColor="@color/white"
-                    android:text="Mensaje" />
+                    <TextView
+                        android:id="@+id/tvVer"
+                        android:layout_width="132dp"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/tv20000"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_ver_detalles"
+                        android:gravity="center"
+                        android:text="VER DETALLES"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
 
-                <TextView
-                    android:id="@+id/tvPor"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginStart="31dp"
-                    android:layout_toEndOf="@id/tvVer"
-                    android:layout_below="@id/tvMensaje"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal"
-                    android:textSize="14sp"
-                    android:textColor="@color/white"
-                    android:text="Por la cena..." />
+                    <TextView
+                        android:id="@+id/tvMensaje"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv20000"
+                        android:layout_marginStart="31dp"
+                        android:layout_toEndOf="@id/tvVer"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Mensaje"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
 
-            </RelativeLayout>
+                    <TextView
+                        android:id="@+id/tvPor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvMensaje"
+                        android:layout_marginStart="31dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toEndOf="@id/tvVer"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Por la cena..."
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
 
             <TextView
-                android:fontFamily="@font/montserrat_semibold"
-                android:layout_marginTop="28dp"
-                android:layout_marginStart="22dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="normal"
-                android:textSize="14sp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Enviar de nuevo"
                 android:textColor="#003087"
-                android:text="Enviar de nuevo" />
+                android:textSize="14sp"
+                android:textStyle="normal" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_marginTop="19dp"
                 android:id="@+id/rcvEnviar"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:layout_marginTop="19dp" />
 
             <RelativeLayout
-                android:layout_marginTop="34dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp">
 
                 <TextView
-                    android:fontFamily="@font/montserrat_semibold"
-                    android:layout_marginStart="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal"
-                    android:textSize="14sp"
+                    android:layout_marginStart="18dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Actividad"
                     android:textColor="#003087"
-                    android:text="Actividad" />
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
 
                 <TextView
-                    android:fontFamily="@font/montserrat_medium"
-                    android:layout_marginEnd="21dp"
-                    android:layout_alignParentEnd="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="normal"
-                    android:textSize="12sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="21dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Ver más movimientos"
                     android:textColor="#025ed7"
-                    android:text="Ver más movimientos" />
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
             </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_marginBottom="23dp"
                 android:id="@+id/rcvActividad"
-                android:background="@drawable/bg_actividad"
+                android:layout_width="match_parent"
+                android:layout_height="167dp"
+                android:layout_marginStart="14dp"
                 android:layout_marginTop="17dp"
                 android:layout_marginEnd="21dp"
-                android:layout_marginStart="14dp"
-                android:layout_width="match_parent"
-                android:layout_height="167dp"/>
+                android:layout_marginBottom="23dp"
+                android:background="@drawable/bg_actividad" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
