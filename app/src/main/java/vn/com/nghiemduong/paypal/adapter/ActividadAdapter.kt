@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import vn.com.nghiemduong.paypal.R
+import vn.com.nghiemduong.paypal.databinding.ItemRcvActividadBinding
 import vn.com.nghiemduong.paypal.model.Actividad
 
 class ActividadAdapter(var mListActividad: MutableList<Actividad>) :
@@ -28,24 +29,24 @@ class ActividadAdapter(var mListActividad: MutableList<Actividad>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val actividad = mListActividad[position]
         actividad.let {
-            holder.tvBottom.text = it.titleBottom
-            holder.tvDola.text = it.dola.toString() + "€"
+            holder.binding.actividad = actividad
 
             if (it.dola > 0) {
-                holder.tvDola.setTextColor(valueOf(Color.GREEN))
+                holder.binding.tvDola.setTextColor(valueOf(Color.GREEN))
             }
-            holder.tvTop.text = it.titleTop
 
             if (position == mListActividad.size - 1) {
-                holder.tvViewLine.visibility = View.GONE
+                holder.binding.tvViewLine.visibility = View.GONE
             }
         }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvTop: TextView = itemView.findViewById(R.id.tvTop)
+
+        val binding = ItemRcvActividadBinding.bind(itemView)
+        /*var tvTop: TextView = itemView.findViewById(R.id.tvTop)
         var tvBottom: TextView = itemView.findViewById(R.id.tvBottom)
         var tvDola: TextView = itemView.findViewById(R.id.tvDola)
-        var tvViewLine: TextView = itemView.findViewById(R.id.tvViewLine)
+        var tvViewLine: TextView = itemView.findViewById(R.id.tvViewLine)*/
     }
 }

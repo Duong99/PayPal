@@ -13,11 +13,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_pay_pal.*
 import vn.com.nghiemduong.paypal.R
 import vn.com.nghiemduong.paypal.adapter.EnviarAdapter
+import vn.com.nghiemduong.paypal.databinding.ActivityMainBinding
 import vn.com.nghiemduong.paypal.fragment.PayPalFragment
 import vn.com.nghiemduong.paypal.model.Enviar
 import vn.com.nghiemduong.paypal.utils.replaceFragmentNoStack
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +32,9 @@ class MainActivity : AppCompatActivity() {
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }*/
 
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
 
         replaceFragmentNoStack(
             supportFragmentManager, PayPalFragment(),
@@ -40,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         navMain.menu.getItem(1).isEnabled = false
 
 
-        navMain.setOnNavigationItemSelectedListener {
+        binding.navMain.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.item_enviar -> startActivity(Intent(this, AccountActivity::class.java))
                 R.id.item_prefit -> startActivity(Intent(this, ConsiderActivity::class.java))
@@ -48,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             return@setOnNavigationItemSelectedListener true
         }
 
-        fabRecibir.setOnClickListener {
+        binding.fabRecibir.setOnClickListener {
             replaceFragmentNoStack(
                 supportFragmentManager, PayPalFragment(),
                 R.id.frameMain

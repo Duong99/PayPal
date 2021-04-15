@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import vn.com.nghiemduong.paypal.R
+import vn.com.nghiemduong.paypal.databinding.ItemRcvEnviarBinding
 import vn.com.nghiemduong.paypal.model.Enviar
 
 class EnviarAdapter(var mListEnviars: MutableList<Enviar>) :
@@ -25,13 +26,11 @@ class EnviarAdapter(var mListEnviars: MutableList<Enviar>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val enviar = mListEnviars[position]
         enviar.let {
-            holder.tvEnviar.text = it.title
-            holder.ivEnviar.setBackgroundResource(it.image)
+            holder.binding.enviar = enviar
         }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvEnviar: TextView = itemView.findViewById(R.id.tvEnivar)
-        var ivEnviar: ImageView = itemView.findViewById(R.id.ivEnviar)
+        val binding = ItemRcvEnviarBinding.bind(itemView)
     }
 }

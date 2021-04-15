@@ -6,18 +6,23 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_account.*
 import vn.com.nghiemduong.paypal.R
 import vn.com.nghiemduong.paypal.adapter.MisAdapter
+import vn.com.nghiemduong.paypal.databinding.ActivityAccountBinding
 import vn.com.nghiemduong.paypal.model.Mis
 
 class AccountActivity : AppCompatActivity() {
 
     private lateinit var mMisAdapter: MisAdapter
     private lateinit var mListMiss: MutableList<Mis>
+    private lateinit var binding: ActivityAccountBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_account)
 
-        tb.setNavigationOnClickListener { onBackPressed() }
+        binding = ActivityAccountBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
+        binding.tb.setNavigationOnClickListener { onBackPressed() }
 
         addLisMiss()
     }
@@ -34,8 +39,8 @@ class AccountActivity : AppCompatActivity() {
     }
 
     private fun setUpdateRcvMis() {
-        rcvMis.setHasFixedSize(true)
-        rcvMis.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        rcvMis.adapter = mMisAdapter
+        binding.rcvMis.setHasFixedSize(true)
+        binding.rcvMis.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.rcvMis.adapter = mMisAdapter
     }
 }

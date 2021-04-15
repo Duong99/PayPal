@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import vn.com.nghiemduong.paypal.R
 import vn.com.nghiemduong.paypal.adapter.ActividadAdapter
 import vn.com.nghiemduong.paypal.adapter.EnviarAdapter
+import vn.com.nghiemduong.paypal.databinding.FragmentPayPalBinding
 import vn.com.nghiemduong.paypal.model.Actividad
 import vn.com.nghiemduong.paypal.model.Enviar
 
@@ -21,22 +22,22 @@ class PayPalFragment : Fragment() {
     private lateinit var mActividadAdapter: ActividadAdapter
     private lateinit var mListEnviars: MutableList<Enviar>
     private lateinit var mListActividads: MutableList<Actividad>
-    private lateinit var mView: View
     private lateinit var rcvEnviar: RecyclerView
     private lateinit var rcvActividad: RecyclerView
+
+    private var _binding: FragmentPayPalBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        mView = inflater.inflate(R.layout.fragment_pay_pal, container, false)
-
-        initView()
+        _binding = FragmentPayPalBinding.inflate(layoutInflater, container, false)
 
         addListEnviars()
         addListActividads()
-        return mView
+        return binding.root
 
     }
 
@@ -53,14 +54,9 @@ class PayPalFragment : Fragment() {
     }
 
     private fun setUpRcvActividad() {
-        rcvActividad.setHasFixedSize(true)
-        rcvActividad.layoutManager = LinearLayoutManager(context)
-        rcvActividad.adapter = mActividadAdapter
-    }
-
-    private fun initView() {
-        rcvEnviar = mView.findViewById(R.id.rcvEnviar)
-        rcvActividad = mView.findViewById(R.id.rcvActividad)
+        binding.rcvActividad.setHasFixedSize(true)
+        binding.rcvActividad.layoutManager = LinearLayoutManager(context)
+        binding.rcvActividad.adapter = mActividadAdapter
     }
 
     private fun addListEnviars() {
@@ -76,10 +72,15 @@ class PayPalFragment : Fragment() {
     }
 
     private fun setUpRcvEnvivar() {
-        rcvEnviar.setHasFixedSize(true)
+        binding.rcvEnviar.setHasFixedSize(true)
         val layoutManager: RecyclerView.LayoutManager =
             GridLayoutManager(context, 4, GridLayoutManager.VERTICAL, true)
-        rcvEnviar.layoutManager = layoutManager
-        rcvEnviar.adapter = mEnviarAdapter
+        binding.rcvEnviar.layoutManager = layoutManager
+        binding.rcvEnviar.adapter = mEnviarAdapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
