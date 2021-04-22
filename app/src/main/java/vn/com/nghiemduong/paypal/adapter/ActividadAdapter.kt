@@ -1,13 +1,10 @@
 package vn.com.nghiemduong.paypal.adapter
 
-import android.content.res.ColorStateList
 import android.content.res.ColorStateList.*
 import android.graphics.Color
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import vn.com.nghiemduong.paypal.R
 import vn.com.nghiemduong.paypal.databinding.ItemRcvActividadBinding
@@ -44,9 +41,5 @@ class ActividadAdapter(var mListActividad: MutableList<Actividad>) :
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val binding = ItemRcvActividadBinding.bind(itemView)
-        /*var tvTop: TextView = itemView.findViewById(R.id.tvTop)
-        var tvBottom: TextView = itemView.findViewById(R.id.tvBottom)
-        var tvDola: TextView = itemView.findViewById(R.id.tvDola)
-        var tvViewLine: TextView = itemView.findViewById(R.id.tvViewLine)*/
     }
 }

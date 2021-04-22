@@ -67,6 +67,7 @@
                 app:cardCornerRadius="10dp">
 
                 <RelativeLayout
+                    android:elevation="2.5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/bg_square_credit_card">
@@ -212,6 +213,7 @@
             </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:elevation="5dp"
                 android:id="@+id/rcvActividad"
                 android:layout_width="match_parent"
                 android:layout_height="167dp"
